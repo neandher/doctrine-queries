@@ -5,21 +5,28 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use AppBundle\Entity\Category;
+use Symfony\Component\HttpFoundation\Request;
 
 class FortuneController extends Controller
 {
     /**
      * @Route("/", name="homepage")
      */
-    public function homepageAction()
+    public function homepageAction(Request $request)
     {
         $categoryRepository = $this->getDoctrine()
             ->getManager()
             ->getRepository('AppBundle:Category');
 
-        $categories = $categoryRepository->findAll();
+        $search = $request->query->get('q');
 
-        return $this->render('fortune/homepage.html.twig',[
+        if ($search) {
+            $categories = $categoryRepository->search($search);
+        } else {
+            $categories = $categoryRepository->findAllOrdered();
+        }
+
+        return $this->render('fortune/homepage.html.twig', [
             'categories' => $categories
         ]);
     }
@@ -33,14 +40,25 @@ class FortuneController extends Controller
             ->getManager()
             ->getRepository('AppBundle:Category');
 
-        $category = $categoryRepository->find($id);
+        $category = $categoryRepository->findWithFortunesJoin($id);
 
         if (!$category) {
             throw $this->createNotFoundException();
         }
 
-        return $this->render('fortune/showCategory.html.twig',[
-            'category' => $category
+        $fortunesData = $this->getDoctrine()
+            ->getRepository('AppBundle:FortuneCookie')
+            ->countNumberPrintedForCategory($category);
+
+        $fortunesPrinted = $fortunesData['fortunesPrinted'];
+        $averagePrinted = $fortunesData['fortunesAverage'];
+        $categoryName = $fortunesData['name'];
+
+        return $this->render('fortune/showCategory.html.twig', [
+            'category' => $category,
+            'fortunesPrinted' => $fortunesPrinted,
+            'averagePrinted' => $averagePrinted,
+            'categoryName' => $categoryName
         ]);
     }
 }

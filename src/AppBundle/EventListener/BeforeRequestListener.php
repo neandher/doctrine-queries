@@ -14,6 +14,9 @@ class BeforeRequestListener
 
     public function onKernelRequest(GetResponseEvent $event)
     {
-        // ...
+        $filters = $this->em->getFilters()
+            ->enable('fortune_cookie_discontinued');
+
+        $filters->setParameter('discontinued', false);
     }
 }

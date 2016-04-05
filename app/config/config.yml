@@ -63,6 +63,8 @@ doctrine:
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
         auto_mapping: true
+        filters:
+            fortune_cookie_discontinued: AppBundle\Doctrine\DiscontinuedFilter
 
 # Swiftmailer Configuration
 swiftmailer:

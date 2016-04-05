@@ -1,0 +1,165 @@
+{
+    "steps": [
+        {
+            "id": "start",
+            "name": "start",
+            "description": null
+        },
+        {
+            "id": "dql-create-empty-repository-method",
+            "name": "DQL: Create empty repository method",
+            "description": null
+        },
+        {
+            "id": "dql-basic-dql-query",
+            "name": "DQL: Basic DQL Query",
+            "description": null
+        },
+        {
+            "id": "dql-ordering-by-name",
+            "name": "DQL: Ordering by name",
+            "description": null
+        },
+        {
+            "id": "dql-printing-sql",
+            "name": "DQL: Printing SQL",
+            "description": null
+        },
+        {
+            "id": "dql-removing-debug",
+            "name": "DQL: Removing debug",
+            "description": null
+        },
+        {
+            "id": "querybuilder-remaking-in-qb-and-printing-dql",
+            "name": "QueryBuilder: Remaking in QB and printing DQL",
+            "description": null
+        },
+        {
+            "id": "querybuilder-removing-die-see-results",
+            "name": "QueryBuilder: Removing die, see results",
+            "description": null
+        },
+        {
+            "id": "andwhere-adding-search-box-with-simple-andwhere",
+            "name": "andWhere: Adding search box with simple andWhere",
+            "description": null
+        },
+        {
+            "id": "andwhere-using-like-query",
+            "name": "andWhere: Using LIKE query",
+            "description": null
+        },
+        {
+            "id": "orwhere-also-looking-in-iconkey",
+            "name": "orWhere: Also looking in iconKey",
+            "description": null
+        },
+        {
+            "id": "join-leftjoin-for-andwhere",
+            "name": "JOIN: leftJoin for andWhere",
+            "description": null
+        },
+        {
+            "id": "join-select-in-the-search",
+            "name": "JOIN: select in the search",
+            "description": null
+        },
+        {
+            "id": "join-addselect-in-the-findallordered",
+            "name": "JOIN: addSelect in the findAllOrdered",
+            "description": null
+        },
+        {
+            "id": "join-adding-join-to-find",
+            "name": "JOIN: Adding join to find()",
+            "description": null
+        },
+        {
+            "id": "sum-summing-up-total-printed-using-getoneornullresult",
+            "name": "SUM: Summing up total printed, using getOneOrNullResult",
+            "description": null
+        },
+        {
+            "id": "sum-using-getsinglescalarresult",
+            "name": "SUM: Using getSingleScalarResult",
+            "description": null
+        },
+        {
+            "id": "select-fields-selecting-more-fields-in-query",
+            "name": "SELECT fields: Selecting more fields in query",
+            "description": null
+        },
+        {
+            "id": "select-fields-joining-to-cat",
+            "name": "SELECT fields: joining to cat",
+            "description": null
+        },
+        {
+            "id": "select-fields-changing-to-getoneornullresult",
+            "name": "SELECT fields: changing to getOneOrNullResult()",
+            "description": null
+        },
+        {
+            "id": "raw-sql-get-connection",
+            "name": "Raw SQL: Get Connection",
+            "description": null
+        },
+        {
+            "id": "raw-sql-trying-a-basic-query",
+            "name": "Raw SQL: Trying a basic query",
+            "description": null
+        },
+        {
+            "id": "raw-sql-doing-real-query",
+            "name": "Raw SQL: Doing real query",
+            "description": null
+        },
+        {
+            "id": "raw-sql-using-fetch-to-get-one-result",
+            "name": "Raw SQL: Using fetch() to get one result",
+            "description": null
+        },
+        {
+            "id": "raw-sql-removing-die-and-returning",
+            "name": "Raw SQL: Removing die and returning",
+            "description": null
+        },
+        {
+            "id": "querybuilder-add-a-method-to-re-use-the-join",
+            "name": "QueryBuilder: Add a method to re-use the join",
+            "description": null
+        },
+        {
+            "id": "filter-create-basic-filter-class",
+            "name": "Filter: Create basic Filter class",
+            "description": null
+        },
+        {
+            "id": "filter-extend-class-with-empty-method",
+            "name": "Filter: Extend class with empty method",
+            "description": null
+        },
+        {
+            "id": "filter-create-filter-class-and-basic-use",
+            "name": "Filter: Create Filter class and basic use",
+            "description": null
+        },
+        {
+            "id": "filter-enable-the-filter",
+            "name": "Filter: Enable the filter",
+            "description": null
+        },
+        {
+            "id": "filter-use-setparameter",
+            "name": "Filter: Use setParameter",
+            "description": null
+        },
+        {
+            "id": "filter-put-into-a-listener",
+            "name": "Filter: Put into a listener",
+            "description": null
+        }
+    ],
+    "sha": "b73449d11169beef55db840a5f6135cfe1e26c3f"
+}

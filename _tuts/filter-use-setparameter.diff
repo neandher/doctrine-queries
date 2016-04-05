@@ -1,0 +1,27 @@
+diff --git a/src/AppBundle/Controller/FortuneController.php b/src/AppBundle/Controller/FortuneController.php
+index 4e5d7f4..f4b9e86 100644
+--- a/src/AppBundle/Controller/FortuneController.php
++++ b/src/AppBundle/Controller/FortuneController.php
+@@ -17,8 +17,9 @@ class FortuneController extends Controller
+     {
+         /** @var EntityManager $em */
+         $em = $this->getDoctrine()->getManager();
+-        $em->getFilters()
++        $filters = $em->getFilters()
+             ->enable('fortune_cookie_discontinued');
++        $filters->setParameter('discontinued', false);
+ 
+         $categoryRepository = $this->getDoctrine()
+             ->getManager()
+diff --git a/src/AppBundle/Doctrine/DiscontinuedFilter.php b/src/AppBundle/Doctrine/DiscontinuedFilter.php
+index d439de2..2dcbe8f 100644
+--- a/src/AppBundle/Doctrine/DiscontinuedFilter.php
++++ b/src/AppBundle/Doctrine/DiscontinuedFilter.php
+@@ -21,6 +21,6 @@ class DiscontinuedFilter extends SQLFilter
+             return '';
+         }
+ 
+-        return sprintf('%s.discontinued = false', $targetTableAlias);
++        return sprintf('%s.discontinued = %s', $targetTableAlias, $this->getParameter('discontinued'));
+     }
+ }

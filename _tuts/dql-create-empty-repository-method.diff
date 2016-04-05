@@ -1,0 +1,26 @@
+diff --git a/src/AppBundle/Controller/FortuneController.php b/src/AppBundle/Controller/FortuneController.php
+index 9149fcd..c6b8576 100644
+--- a/src/AppBundle/Controller/FortuneController.php
++++ b/src/AppBundle/Controller/FortuneController.php
+@@ -17,7 +17,7 @@ class FortuneController extends Controller
+             ->getManager()
+             ->getRepository('AppBundle:Category');
+ 
+-        $categories = $categoryRepository->findAll();
++        $categories = $categoryRepository->findAllOrdered();
+ 
+         return $this->render('fortune/homepage.html.twig',[
+             'categories' => $categories
+diff --git a/src/AppBundle/Entity/CategoryRepository.php b/src/AppBundle/Entity/CategoryRepository.php
+index 2812b6f..fa607ce 100644
+--- a/src/AppBundle/Entity/CategoryRepository.php
++++ b/src/AppBundle/Entity/CategoryRepository.php
+@@ -12,4 +12,8 @@ use Doctrine\ORM\EntityRepository;
+  */
+ class CategoryRepository extends EntityRepository
+ {
++    public function findAllOrdered()
++    {
++        die('this query will blow your mind...');
++    }
+ }
